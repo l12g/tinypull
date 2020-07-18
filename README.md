@@ -32,7 +32,7 @@ pullx(wrapper:string | HtmlElement,trigger:Function,config?:Object)
 pullx 返回一个函数，用于清理实例
 
 ```js
-const clear = tinypull(wrapper, trigger);
+const clear = pullx(wrapper, trigger);
 clear();
 ```
 
