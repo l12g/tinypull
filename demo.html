@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .w,
+      .w2 {
+        width: 200px;
+        height: 500px;
+        background-color: #efefef;
+        overflow: auto;
+        display: inline-block;
+      }
+      .pulldown-x {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden;">
+    <div class="w22"></div>
+    <div class="w">
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+      <p>asda</p>
+    </div>
+    <script src="./dist/pullx.js"></script>
+    <script>
+      pullx.defaults.loadingText = "加载中...";
+      pullx.defaults.holdText = "下拉刷新";
+      pullx.defaults.releaseText = "释放刷新";
+      // pdx.defaults.maxHeight = 500;
+      /**
+       * pdx('.el',done=>{
+       *  done()
+       * })
+       *
+       *
+       *
+       * **/
+      // pdx(document.body, function (done) {
+      //   setTimeout(() => {
+      //     done();
+      //   }, 2000);
+      // });
+      pullx(".w", function (done) {
+        setTimeout(() => {
+          done();
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
