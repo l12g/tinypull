@@ -14,10 +14,8 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "rollup": "^2.21.0"
-  },
   "devDependencies": {
+    "rollup": "^2.21.0",
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "rollup-plugin-babel": "^4.4.0",

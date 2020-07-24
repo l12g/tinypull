@@ -1,4 +1,4 @@
-import initData from "./data";
+import initData, { disposeData } from "./data";
 import def from "./def";
 import defaults from "./defaults";
 const KEY = Symbol();
@@ -10,14 +10,13 @@ export default function Pulldownx(wrapper, trigger, config) {
     return;
   }
   def(el, KEY, true);
-  const cfg = Object.assign({}, defaults, config);
   const topEl = document.createElement("div");
-  topEl.className = "pulldown-x";
+  topEl.className = "pullx";
   topEl.style.cssText =
     "height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;";
 
   el.prepend(topEl);
-  const data = initData(el, topEl, cfg);
+  const data = initData(el, topEl, config);
   let tid = 0;
 
   const close = () => {
@@ -26,7 +25,7 @@ export default function Pulldownx(wrapper, trigger, config) {
   const success = () => {
     data.status = "successed";
     clearTimeout(tid);
-    tid = setTimeout(close, cfg.successedDelay);
+    tid = setTimeout(close, config.successedDelay);
   };
   const handleStart = (evt) => {
     const [pos] = evt.touches;
@@ -46,7 +45,7 @@ export default function Pulldownx(wrapper, trigger, config) {
     }
     const [pos] = evt.touches;
     const dis = Math.floor(pos.screenY - data.pos);
-    data.status = dis > (cfg.maxHeight / 3) * 2 ? "ready" : "init";
+    data.status = dis > (config.maxHeight / 3) * 2 ? "ready" : "init";
     data.height = Math.min(defaults.maxHeight, dis);
   };
   const handleEnd = (evt) => {
@@ -83,6 +82,7 @@ export default function Pulldownx(wrapper, trigger, config) {
     evts.forEach(([target, evt, handler]) => {
       target.removeEventListener(evt, handler);
     });
+    disposeData(data);
     try {
       topEl.remove();
       delete wrapper[KEY];

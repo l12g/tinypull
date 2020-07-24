@@ -25,3 +25,9 @@ export default function initData(el, topEl, config) {
   data.animation = false;
   return data;
 }
+
+export function disposeData(data) {
+  delete data.height;
+  delete data.status;
+  delete data.animation;
+}
