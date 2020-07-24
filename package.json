@@ -1,9 +1,19 @@
 {
   "name": "pullx",
-  "version": "0.1.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "an tiny pulldown lib for mobile web",
   "main": "dist/pullx.min.js",
   "typings": "./index.d.ts",
+  "keywords": [
+    "pulldown",
+    "web",
+    "mobile"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voidshub/pullx"
+  },
+  "homepage": "https://github.com/voidshub/pullx",
   "files": [
     "dist",
     "index.d.ts"
@@ -13,7 +23,7 @@
     "dev": "node scripts/build.js -w"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "rollup": "^2.21.0",
     "@babel/core": "^7.10.5",
